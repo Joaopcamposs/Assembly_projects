@@ -1,0 +1,8 @@
+ÀÄmain
+   ÃÄMAIN  0/108  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄle_botaoS1  0/22  Ram=1
+   ³  ÃÄle_botaoS2  0/30  Ram=1
+   ³  ÃÄle_botaoS3  0/48  Ram=1
+   ³  ÀÄle_botaoS4  0/48  Ram=1
+   ÀÄTIMER0_isr  0/109  Ram=1

@@ -1,0 +1,54 @@
+
+ROM used:   412/8192 (5%)
+            412/8192 (5%) including unused fragments
+
+            0.4 Average locations per line
+            2.2 Average locations per statement
+
+RAM used:   35/368 (10%) at main() level
+            36/368 (10%) worst case
+
+Stack used: 1 worst case (0 in main + 1 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  288   191 100  main.c
+   18     0   0  main.h
+  674     0   0  C:\Program Files (x86)\PICC\Devices\16F877A.h
+----- -----
+  980   191 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0    109  26    1    825  5.3  TIMER0_isr
+0    108  26    1   1135  4.9  MAIN
+0     22   5    1    270  3.6  le_botaoS1
+0     30   7    1    389  3.8  le_botaoS2
+0     48  12    1    612  4.3  le_botaoS3
+0     48  12    1    609  3.8  le_botaoS4
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               6
+    Statements              191
+    Comments                125
+    Volume (V)              5484
+    Difficulty (D)          25.7
+    Effort to implement (E) 140835
+    Time to implement (T)   2 hours, 10 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   38
+    Maintainability (MI)    113
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0002E    43  0  
+0002F-007FF   365  1636  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

@@ -1,0 +1,94 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.070
+Compiler=PCM
+CCSVersion=5.070
+Development_Mode=
+ToolSuite=CCS
+[Target Data]
+FileList=main.c
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+[Directories]
+Include=
+Library=
+LinkerScript=
+output=
+[D:\IFTM\6º SEM\MICRO\MICRO 2020-2\ProjetosC\prova1c\main]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=2
+D1=07-12-2020
+D1_L=4
+D1_L1=[36296]Project Opened.
+D1_L2=[36365]Started Editing.
+D1_L3=[38815]Stopped Editing.
+TotalEdit=58
+TotalDebug=0
+D1_E=41
+D1_D=0
+D1_L4=[38815]Project Closed.
+D2=14-12-2020
+D2_L=8
+D2_L1=[36858]Project Opened.
+D2_L2=[38471]Project Closed.
+D2_L3=[47905]Project Opened.
+D2_L4=[47975]Started Editing.
+D2_L5=[48822]Stopped Editing.
+D2_E=17
+D2_D=0
+D2_L6=[48920]Started Editing.
+D2_L7=[48985]Stopped Editing.
+D2_L8=[48986]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[defines]
+buildcount=12
+enabled=0
+chip=1
+D1=
+V1=
+[Units]
+Count=1
+1=main
+Link=0
+
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+
+[CompilerVersion]
+Fixed=
