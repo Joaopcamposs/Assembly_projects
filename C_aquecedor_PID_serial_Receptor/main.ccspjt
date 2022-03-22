@@ -1,0 +1,102 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.070
+Compiler=PCM
+CCSVersion=5.070
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[D:\IFTM\6º SEM\MICRO\MICRO 2020-2\Estudos Autonomos\Trabalho Rec Final - Receptor\main]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=2
+D1=02-03-2021
+D1_L=40
+D1_L1=[29198]Project Opened.
+D1_L2=[29244]Started Editing.
+D1_L3=[30568]Stopped Editing.
+D1_L4=[30881]Started Editing.
+D1_L5=[31362]Stopped Editing.
+D1_L6=[31990]Started Editing.
+D1_L7=[33010]Stopped Editing.
+TotalEdit=422
+TotalDebug=0
+D1_E=373
+D1_D=0
+D1_L8=[33011]Project Closed.
+D1_L9=[34360]Project Opened.
+D1_L10=[34389]Started Editing.
+D1_L11=[35011]Stopped Editing.
+D1_L12=[35011]Project Closed.
+D1_L13=[41102]Project Opened.
+D1_L14=[41308]Started Editing.
+D1_L15=[41838]Stopped Editing.
+D1_L16=[41839]Project Closed.
+D1_L17=[42152]Project Opened.
+D1_L18=[42183]Started Editing.
+D1_L19=[45922]Stopped Editing.
+D1_L20=[46051]Started Editing.
+D1_L21=[46681]Stopped Editing.
+D1_L22=[46726]Started Editing.
+D1_L23=[49158]Stopped Editing.
+D1_L24=[49158]Project Closed.
+D1_L25=[49241]Project Opened.
+D1_L26=[49249]Started Editing.
+D1_L27=[56777]Stopped Editing.
+D1_L28=[57121]Project Closed.
+D1_L29=[57322]Project Opened.
+D1_L30=[57356]Started Editing.
+D1_L31=[59788]Stopped Editing.
+D1_L32=[59827]Started Editing.
+D1_L33=[61338]Stopped Editing.
+D1_L34=[61338]Project Closed.
+D1_L35=[68953]Project Opened.
+D1_L36=[69356]Started Editing.
+D1_L37=[70060]Stopped Editing.
+D1_L38=[70179]Started Editing.
+D1_L39=[71445]Stopped Editing.
+D1_L40=[83336]Project Closed.
+D2=03-03-2021
+D2_L=20
+D2_L1=[26630]Project Opened.
+D2_L2=[26673]Started Editing.
+D2_L3=[28231]Stopped Editing.
+D2_L4=[28258]Started Editing.
+D2_L5=[29399]Stopped Editing.
+D2_E=49
+D2_D=0
+D2_L6=[29399]Project Closed.
+D2_L7=[30035]Project Opened.
+D2_L8=[30045]Started Editing.
+D2_L9=[30295]Stopped Editing.
+D2_L10=[30295]Project Closed.
+D2_L11=[45765]Project Opened.
+D2_L12=[45784]Started Editing.
+D2_L13=[46108]Stopped Editing.
+D2_L14=[46117]Started Editing.
+D2_L15=[46186]Stopped Editing.
+D2_L16=[46186]Project Closed.
+D2_L17=[46528]Project Opened.
+D2_L18=[46535]Started Editing.
+D2_L19=[46647]Stopped Editing.
+D2_L20=[46648]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=159
+[Units]
+Count=1
+1=main (main)

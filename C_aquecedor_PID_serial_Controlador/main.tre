@@ -1,0 +1,194 @@
+ÀÄmain
+   ÃÄMAIN  1/478  Ram=2
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄlcd_init  0/31  Ram=0
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄoutput  0/51  Ram=2
+   ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@delay_ms1  0/20  Ram=1
+   ³  ÃÄle_entradas_analogicas  0/201  Ram=4
+   ³  ³  ÃÄ@ITOF  0/29  Ram=2
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@FLT  0/63  Ram=10
+   ³  ³  ÃÄ@FLT  0/63  Ram=10
+   ³  ³  ÃÄ@ITOF  0/29  Ram=2
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÀÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄoutput  0/51  Ram=2
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_L32D_605FPFPF  0/195  Ram=13
+   ³  ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ³  ÃÄ@FTOSD  0/31  Ram=5
+   ³  ³  ³  ÃÄ@DIV3232  0/83  Ram=17
+   ³  ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄ@DIV3232  0/83  Ram=17
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_L32D_605FPFPF  0/195  Ram=13
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_L32D_605FPFPF  0/195  Ram=13
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_L32D_605FPFPF  0/195  Ram=13
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@PRINTF_L32D_605FPFPF  0/195  Ram=13
+   ³  ³     ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÃÄ@PRINTF_L32D_9600_62_63FPFPF  0/199  Ram=13
+   ³  ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ³  ÃÄ@FTOSD  0/31  Ram=5
+   ³  ³  ³  ÃÄ@DIV3232  0/83  Ram=17
+   ³  ³  ³  ÀÄ@DIV3232  0/83  Ram=17
+   ³  ³  ÃÄ@PRINTF_L32D_9600_62_63FPFPF  0/199  Ram=13
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_D_9600_62_63  0/91  Ram=6
+   ³  ³  ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ³  ³  ÀÄ@DIV88  0/21  Ram=3
+   ³  ³  ÃÄ@PRINTF_D_9600_62_63  0/91  Ram=6
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_L32D_9600_62_63FPFPF  0/199  Ram=13
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PRINTF_L32D_9600_62_63FPFPF  0/199  Ram=13
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@PRINTF_L32D_9600_62_63FPFPF  0/199  Ram=13
+   ³  ³     ÀÄ*
+   ³  ÃÄcontrolador_PID  1/385  Ram=8
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÃÄ@DIVFF  1/203  Ram=14
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@DIVFF  1/203  Ram=14
+   ³  ³  ÃÄ@MULFF  0/134  Ram=17
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ³  ÀÄ@FLT  0/63  Ram=10
+   ³  ÃÄ@SFTOI  0/33  Ram=4
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄ@ADDFF  0/321  Ram=16
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄselec_parametro  0/12  Ram=0
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄenvia_serial  0/112  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄprinta_lcd  0/202  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÀÄenvia_serial  0/112  Ram=1
+   ³     ÀÄ*
+   ÀÄTIMER0_isr  0/24  Ram=1

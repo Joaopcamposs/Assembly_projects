@@ -1,0 +1,229 @@
+//s1 - liga/desliga
+//s2 - altera/seleciona parametro
+//s3 - incrementa
+//s4 - decrementa
+
+#include <main.h>
+#include <lcd_8bits.c>
+
+int1     processo, fim_tempo;
+
+int8     parametro = 0;
+
+int16    aux_tempo = 500;
+int16    sensor, potenciometro;
+int16    largura_PWM;
+
+float    erro, erro_anterior;
+float    Proporcional, Integral, Derivativo;
+float    SP_temperatura, PV_temperatura;
+float    PID;
+float    KP = 6.0, KI = 2.0, TD = 0.0;
+
+//ordem do vetor dado RX
+//[0]-SP, [1]-PV, [2]-P, [3]-Param, [4]-Kp, [5]-Ki, [6]-Td
+
+#define  LARGURA_MAX_PWM   799      //largura maxima do PWM
+#define  TA                0.5      //intervalo de calculo do PID
+
+void envia_serial();
+void controlador_PID();
+void le_entradas_analogicas();
+int8 selec_parametro();
+
+#INT_TIMER0
+void  TIMER0_isr(void) {
+   aux_tempo--;
+   if (aux_tempo == 0)
+   {
+      aux_tempo = 500;
+      fim_tempo = 1;
+   }
+}
+
+void main()
+{
+   setup_adc_ports(AN0_AN1_AN3);
+   setup_adc(ADC_CLOCK_INTERNAL);
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_4|RTCC_8_BIT);      //1,0 ms overflow
+   setup_timer_2(T2_DIV_BY_1,199,1);                        //200 us overflow, 200 us interrupt
+
+   setup_ccp1(CCP_PWM);
+   set_pwm1_duty((int16)0);
+   
+   lcd_init();
+   
+   lcd_gotoxy(1,1);
+   printf(lcd_write_dat,"SP:");
+   lcd_gotoxy(9,1);
+   printf(lcd_write_dat,"PV:"); 
+   lcd_gotoxy(1,2);
+   printf(lcd_write_dat,"P:");
+   lcd_gotoxy(3,2);
+   printf(lcd_write_dat,"OF");
+   lcd_gotoxy(8,2);
+   printf(lcd_write_dat,"Kp:");
+   lcd_gotoxy(11,2);
+   printf(lcd_write_dat,"%.3f", KP);
+   //envia_serial();
+   
+   enable_interrupts(INT_TIMER0);
+   enable_interrupts(GLOBAL);
+
+   while(TRUE) //laco principal
+   {
+      if (fim_tempo) //
+      {
+         fim_tempo = 0;
+         le_entradas_analogicas();
+         lcd_gotoxy(4,1);
+         printf(lcd_write_dat,"%3.1f",SP_temperatura);
+         lcd_gotoxy(12,1);
+         printf(lcd_write_dat,"%3.1f",PV_temperatura);
+         //envia_serial();
+         
+         if (processo)
+         {
+            controlador_PID();
+            largura_PWM = (int16)PID;
+            if (largura_PWM > LARGURA_MAX_PWM)  
+               largura_PWM = LARGURA_MAX_PWM;
+            set_pwm1_duty(largura_PWM);
+         }
+      }
+      
+      if (processo == 0) //se processo estiver desligado
+      {
+         if (input(B_S1) == 0) //ligar processo
+         {
+            processo = 1;
+            aux_tempo = 500;
+            fim_tempo = 0;
+            lcd_gotoxy(3,2);
+            printf(lcd_write_dat,"ON");
+            envia_serial();
+         }
+         
+         if (input(B_S3) == 0) //incrementar
+         {            
+            if(parametro == 1){//Ki
+               KI = KI + 0.001;
+               lcd_gotoxy(11,2);
+               printf(lcd_write_dat,"%.3f", KI);
+               envia_serial();
+            }
+            if(parametro == 2){//Td
+               TD = TD + 0.001;
+               lcd_gotoxy(11,2);
+               printf(lcd_write_dat,"%.3f",TD);
+               envia_serial();
+            }
+            if(parametro == 0){//Kp
+               KP = KP + 0.001;
+               lcd_gotoxy(11,2);
+               printf(lcd_write_dat,"%.3f", KP);
+               envia_serial();
+            }
+         }
+         
+         if (input(B_S4) == 0) //decrementa
+         {            
+            if(parametro == 1){//Ki
+               KI = KI - 0.001;
+               lcd_gotoxy(11,2);
+               printf(lcd_write_dat,"%.3f", KI);
+               envia_serial();
+            }else
+            if(parametro == 2){//Td
+               TD = TD - 0.001;
+               lcd_gotoxy(11,2);
+               printf(lcd_write_dat,"%.3f",TD);
+               envia_serial();
+            }else
+            if(parametro == 0){//Kp
+               KP = KP - 0.001;
+               lcd_gotoxy(11,2);
+               printf(lcd_write_dat,"%.3f", KP);
+               envia_serial();
+            }
+         }
+      }
+      
+      if (input(B_S2) == 0) //altera parametro
+      {
+         int8 param = selec_parametro();
+         
+         if(param == 1){//Ki
+            lcd_gotoxy(8,2);
+            printf(lcd_write_dat,"Ki:");
+            lcd_gotoxy(11,2);
+            printf(lcd_write_dat,"%.3f", KI);
+            envia_serial();
+         }else
+         if(param == 2){//Td
+            lcd_gotoxy(8,2);
+            printf(lcd_write_dat,"Td:");
+            lcd_gotoxy(11,2);
+            printf(lcd_write_dat,"%.3f",TD);
+            envia_serial();
+         }else
+         if(param == 0){//Kp
+            lcd_gotoxy(8,2);
+            printf(lcd_write_dat,"Kp:");
+            lcd_gotoxy(11,2);
+            printf(lcd_write_dat,"%.3f", KP);
+            envia_serial();
+         }
+      }
+      
+      if (processo == 1 && input(B_S1) == 0) //desligar processo
+      {
+         processo = 0;
+         lcd_gotoxy(3,2);
+         printf(lcd_write_dat,"OF");
+         set_pwm1_duty((int16)0);
+         PID = 0.0;
+         Integral = 0.0;
+         envia_serial();
+      }
+   }
+}
+
+void envia_serial(){
+   printf("$%f,%f,%.0f,%.0f,%.3f,%.3f,%.3f#", SP_temperatura,PV_temperatura,0.0,0.0,KP,KI,TD);
+}
+
+int8 selec_parametro(){ //funcao para alterar parametro selecionado
+   if(parametro == 2){
+      parametro = 0;
+      }
+   else{
+      parametro++;
+      }
+   
+   return parametro;
+}
+
+void controlador_PID(){ //funcao controladora do pid
+   erro = (SP_temperatura - PV_temperatura);
+   Proporcional = KP * erro;
+   Integral += (((TA * erro_anterior) + (((erro - erro_anterior)*TA)/2)) * KI);
+   Derivativo = ((erro - erro_anterior) / TA) * TD;
+   PID = Proporcional + Integral + Derivativo;
+   erro_anterior = erro;
+   if (PID < 0.0) PID = 0.0;
+}
+
+void le_entradas_analogicas(){ //funcao que le entradas analogicas (heater)
+     set_adc_channel(1);                          //le o canal 0 - sensor de temperatura
+     delay_us(10);                                //atraso para estabilização da tensão na entrada do ADC
+     sensor = read_adc();                         //le o valor convertido do canal 0
+     set_adc_channel(0);                          //le o canal 1 - valor do potenciômetro
+     delay_us(10);                                //atraso para estabilização da tensão na entrada do ADC
+     potenciometro = read_adc();                 //le o valor convertido do canal 1
+     SP_temperatura = sensor * 0.1238 - 14.62;
+     if (SP_temperatura < 30.0) SP_temperatura = 30.0;
+     if (SP_temperatura > 80.0) SP_temperatura = 80.0;     
+     PV_temperatura = potenciometro * 0.1238 - 14.62;
+}
+

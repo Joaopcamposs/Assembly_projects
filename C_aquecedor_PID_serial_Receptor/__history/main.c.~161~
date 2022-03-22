@@ -1,0 +1,194 @@
+#include <main.h>
+#include <lcd_8bits.c>
+#include <String.h>
+
+#define INI_P '$'       //inicio dos dados transferidos pelo protocolo
+#define SEP_P ','       //separador de dados do protocolo
+#define END_P '@'       //fim dos dados transferidos pelo protocolo
+
+int1  fim_rx;
+char  rx_dado;
+char  dado[36];
+int8  indice;
+
+char SP[4], PV[4], P[1], Param[1], KP[5], KI[5], TD[5];
+
+//ordem do vetor dado
+//[0]-SP, [1]-PV, [2]-P, [3]-Param, [4]-Kp, [5]-Ki, [6]-Td
+
+void pega_valores();
+void atualizar_display();
+void iniciar_display();
+void ajuste_valores();
+
+#INT_RDA
+void  RDA_isr(void) 
+{   
+   rx_dado = getc();                //le o dado serial armazenado no buffer de recepcao serial
+   dado[indice] = rx_dado;          //armazena o dado recebido no vetor de dados
+   indice++;                        //incrementa a posicao do vetor
+   if(rx_dado == END_P)              //verifica se chegou todos os dados do pacote
+   {
+      fim_rx = 1;                   //se sim, sinaliza que o pacote está completo
+      indice = 0;                   //iniciliza a posição do vetor
+   } 
+}
+
+#INT_TIMER0
+void  TIMER0_isr(void) 
+{
+
+}
+
+void main()
+{
+   setup_adc_ports(AN0_AN1_AN3);
+   setup_adc(ADC_CLOCK_INTERNAL);
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_16|RTCC_8_BIT);      //4,0 ms overflow
+   
+   lcd_init();
+
+   enable_interrupts(INT_RDA);
+   disable_interrupts(INT_TIMER0);
+   enable_interrupts(GLOBAL);
+   
+   pega_valores();
+   iniciar_display();
+
+   while(TRUE)
+   {
+      if(fim_rx)
+      {    
+         pega_valores();
+
+         pega_valores();
+         
+         iniciar_display();
+         
+         atualizar_display();
+         
+         fim_rx = 0;
+      }
+   }
+
+}
+
+void ajuste_valores(){
+         lcd_gotoxy(1,1);
+         char sp2[4];
+         strncpy(sp2,SP,4);
+         printf(lcd_write_dat, "%s", sp2);
+         
+         lcd_gotoxy(6,1);
+         char pv2[4];
+         strncpy(pv2,PV,4);
+         printf(lcd_write_dat, "%s", pv2);
+         
+         lcd_gotoxy(11,1);
+         char p2[1];
+         strncpy(p2,P,1);
+         printf(lcd_write_dat, "%s", p2);
+         
+         char param2[4];
+         strncpy(param2,Param,1);
+         lcd_gotoxy(14,1);
+         printf(lcd_write_dat, "%s", param2);
+         
+         char kp2[4];
+         strncpy(kp2,KP,5);
+         lcd_gotoxy(1,2);
+         printf(lcd_write_dat, "%s", kp2);
+         
+         char ki2[4];
+         strncpy(ki2,KI,5);
+         lcd_gotoxy(7,2);
+         printf(lcd_write_dat, "%s", ki2);
+         
+         char td2[4];
+         strncpy(td2,TD,5);
+         lcd_gotoxy(13,2);
+         printf(lcd_write_dat, "%s", td2);
+}
+
+void pega_valores(){   
+   
+      int8 k = 1;
+         for(int8 j=0;j<4;j++){          //SP
+            SP[j] = dado[k];
+            k++;
+         }k++;
+         for(int8 j=0;j<4;j++){          //PV
+            PV[j] = dado[k];
+            k++;
+         }k++;
+         for(int8 j=0;j<1;j++){          //P
+            P[j] = dado[k];
+            k++;
+         }k++;
+         for(int8 j=0;j<1;j++){          //Param
+            Param[j] = dado[k];
+            k++;
+         }k++;
+         for(int8 j=0;j<4;j++){          //KP
+            KP[j] = dado[k];
+            k++;
+         }k++;
+         for(int8 j=0;j<4;j++){          //KI
+            KI[j] = dado[k];
+            k++;
+         }k++;
+         for(int8 j=0;j<4;j++){          //TD
+            TD[j] = dado[k];
+            k++;
+         }
+         void ajuste_valores();
+}
+
+void atualizar_display(){
+   lcd_gotoxy(4,1);
+   printf(lcd_write_dat,"%s", SP); //dado SP
+   lcd_gotoxy(12,1);
+   printf(lcd_write_dat,"%s", PV); //dado PV
+   if(dado[2] == 0.0){ //dado estado do processo
+      lcd_gotoxy(3,2);
+      printf(lcd_write_dat,"OF");
+   }else{
+      lcd_gotoxy(3,2);
+      printf(lcd_write_dat,"ON");
+   }
+   if(dado[3] == 0){ //Kp
+      lcd_gotoxy(8,2);
+      printf(lcd_write_dat,"Kp:");
+      lcd_gotoxy(11,2);
+      printf(lcd_write_dat,"%s", KP);
+   }else
+   if(dado[3] == 1){ //Ki
+      lcd_gotoxy(8,2);
+      printf(lcd_write_dat,"Ki:");
+      lcd_gotoxy(11,2);
+      printf(lcd_write_dat,"%s", KI);
+   }else
+   if(dado[3] == 2){ //Td
+      lcd_gotoxy(8,2);
+      printf(lcd_write_dat,"Td:");
+      lcd_gotoxy(11,2);
+      printf(lcd_write_dat,"%s", TD);
+   }
+}
+
+void iniciar_display(){
+   lcd_gotoxy(1,1);
+   printf(lcd_write_dat,"SP:");
+   lcd_gotoxy(9,1);
+   printf(lcd_write_dat,"PV:"); 
+   lcd_gotoxy(1,2);
+   printf(lcd_write_dat,"P:");
+   lcd_gotoxy(3,2);
+   printf(lcd_write_dat,"OF");
+   lcd_gotoxy(8,2);
+   printf(lcd_write_dat,"Kp:");
+   lcd_gotoxy(11,2);
+   printf(lcd_write_dat,"%s", KP);
+}
+
+

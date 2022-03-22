@@ -1,0 +1,100 @@
+ÀÄmain
+   ÃÄMAIN  0/59  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄlcd_init  0/31  Ram=0
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄoutput  0/52  Ram=2
+   ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/20  Ram=1
+   ³  ³  ÃÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@delay_ms1  0/20  Ram=1
+   ³  ÃÄpega_valores  0/170  Ram=11
+   ³  ÃÄatualizar_display  0/217  Ram=6
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄlcd_write_cmd  0/32  Ram=1
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄoutput  0/52  Ram=2
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_write_dat  0/32  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_gotoxy  0/16  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄlcd_write_dat  0/32  Ram=1
+   ³  ³     ÀÄ*
+   ³  ÃÄpega_valores  0/170  Ram=11
+   ³  ÀÄatualizar_display  0/217  Ram=6
+   ³     ÀÄ*
+   ÃÄRDA_isr  0/21  Ram=3
+   ÀÄTIMER0_isr  0/4  Ram=0
