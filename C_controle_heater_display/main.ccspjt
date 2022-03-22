@@ -1,0 +1,52 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.070
+Compiler=PCM
+CCSVersion=5.070
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[D:\Facul\6º Periodo\Micro\2020-2\C\Trabalhos C\Prova3JoaoPauloAlves\main]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=1
+D1=11-01-2021
+D1_L=14
+D1_L1=[30572]Project Opened.
+D1_L2=[30652]Started Editing.
+D1_L3=[38362]Stopped Editing.
+TotalEdit=141
+TotalDebug=0
+D1_E=141
+D1_D=0
+D1_L4=[38362]Project Closed.
+D1_L5=[38491]Project Opened.
+D1_L6=[38527]Started Editing.
+D1_L7=[38731]Stopped Editing.
+D1_L8=[38731]Project Closed.
+D1_L9=[39327]Project Opened.
+D1_L10=[39360]Started Editing.
+D1_L11=[39781]Stopped Editing.
+D1_L12=[39781]Project Closed.
+D1_L13=[39806]Project Opened.
+D1_L14=[39839]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+2=main.h
+t2=9
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=63
+[Units]
+Count=1
+1=main (main)
